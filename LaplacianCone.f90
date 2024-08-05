@@ -3,7 +3,6 @@ PROGRAM central_diff
   INTEGER, PARAMETER :: nx = 64, ny = 64
   REAL :: dx, dy, u(nx,ny)
   INTEGER :: i, j
-  character(len=*), parameter :: PLT_FILE = 'map.plt'
   real, dimension(nx) :: ux
   real, dimension(ny) :: uy
   dx = 1
