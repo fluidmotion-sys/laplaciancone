@@ -1,8 +1,16 @@
+subroutine outer(p)
+   integer :: p
+   q = 1.0
+   do p = 2, p
+     q = q * p
+   enddo
+end subroutine outer
 PROGRAM central_diff
   IMPLICIT NONE
   INTEGER, PARAMETER :: nx = 6, ny = 6
   REAL :: dx, dy, u(nx,ny)
   INTEGER :: i, j
+  integer :: impedance = 5
   real, dimension(nx) :: ux
   real, dimension(ny) :: uy
   dx = 1.83e-4
@@ -52,6 +60,7 @@ PROGRAM central_diff
       uy = (u(i,j+1) - u(i,j-1)) / (2*dy)
     END DO
   END DO
+  call outer(impedance)
   open(1, file = 'heat_map_data.csv', status = 'new')
   do i=1,6
      write(1,*) u(i,1), u(i,2), u(i,3), u(i,4), u(i,5), u(i,6)
