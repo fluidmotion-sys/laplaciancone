@@ -1,5 +1,6 @@
 import csv
 import numpy as np
+import plotly
 import plotly.express as px
 d=np.zeros((6,6))
 k=0
@@ -13,4 +14,5 @@ with open('heat_map_data.csv', newline='') as f:
             d[k,i]=c[i]
         k+=1
 fig = px.imshow(d,text_auto=True)
-fig.show()
+#fig.show()
+plotly.offline.plot(fig, filename='temperature.html')
