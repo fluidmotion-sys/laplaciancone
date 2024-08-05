@@ -1,13 +1,13 @@
 PROGRAM central_diff
   IMPLICIT NONE
-  INTEGER, PARAMETER :: nx = 64, ny = 64
+  INTEGER, PARAMETER :: nx = 6, ny = 6
   REAL :: dx, dy, u(nx,ny)
   INTEGER :: i, j
   real, dimension(nx) :: ux
   real, dimension(ny) :: uy
-  dx = 1
-  dy = 1
-  u(1,1) = 1
+  dx = 1.83e-4
+  dy = 2.90e-5
+  u(1,1) = 0
   u(1,2) = 2
   u(1,3) = 3
   u(1,4) = 40
@@ -27,13 +27,13 @@ PROGRAM central_diff
   u(3,6) = 18
   u(4,1) = 19
   u(4,2) = 20
-  u(4,3) = 21
+  u(4,3) = 424
   u(4,4) = 22
   u(4,5) = 23
   u(4,6) = 24
   u(5,1) = 25
   u(5,2) = 26
-  u(5,3) = 47
+  u(5,3) = 27
   u(5,4) = 28
   u(5,5) = 29
   u(5,6) = 30
@@ -44,7 +44,6 @@ PROGRAM central_diff
   u(6,5) = 35
   u(6,6) = 36
   u(1,ny) = 0
-  u(32,32) = 424
   u(nx,ny) = 0
   u(nx,1) = 0
   DO j = 2, ny-1
