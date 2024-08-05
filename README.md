@@ -1,1 +1,1 @@
-Fluidmotion® code to translates files in optoelectronic predictions.
+Fluidmotion® code to translate files in optoelectronic predictions.
