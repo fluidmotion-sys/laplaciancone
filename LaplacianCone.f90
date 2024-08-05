@@ -50,7 +50,6 @@ PROGRAM central_diff
   u(nx,1) = 0
   DO j = 2, ny-1
     DO i = 2, nx-1
-      u(i,j) = -i**2-j**3
       ux = (u(i+1,j) - u(i-1,j)) / (2*dx)
       uy = (u(i,j+1) - u(i,j-1)) / (2*dy)
     END DO
